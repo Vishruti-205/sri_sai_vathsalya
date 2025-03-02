@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Sai Vatsalya School</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .fade-in { animation: fadeIn 2s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .slideshow {
+            position: relative;
+            width: 100%;
+            max-height: 700px;
+            overflow: hidden;
+        }
+        .slide {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            display: none;
+        }
+        .slide:first-child {
+            display: block;
+        }
+        @media (max-width: 768px) {
+            .slideshow { max-height: 500px; }
+        }
+    </style>
+</head>
+<body class="bg-yellow-100 text-white-700">
+    <nav class="flex items-center justify-between p-2 bg-red-800 shadow-lg relative">
+        <div class="flex items-center">
+            <a href="index.html" class="flex-shrink-0">
+                <img src="C:\Users\CHANDU KADIRI\Pictures\WhatsApp Image 2025-02-17 at 2.59.12 PM.jpeg" alt="School Logo" class="h-20 md:h-24 rounded-full">
+            </a>
+        </div>
+        <div class="flex items-center space-x-4">
+            <button id="menu-btn" class="md:hidden text-white text-2xl">☰</button>
+            <div id="menu" class="hidden md:flex space-x-4 text-white">
+                <a href="index.html" class="hover:text-yellow-400">Home</a>
+                <a href="#donations" class="hover:text-yellow-400">Donations</a>
+                <a href="Achievements.html" class="hover:text-yellow-400">Achievements</a>
+                <a href="FacultyInfo.html" class="hover:text-yellow-400">Faculty</a>
+                <a href="#gallery" class="hover:text-yellow-400">Gallery</a>
+            </div>
+            <a href="DonationsBruu.html" class="hidden md:inline-block bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600">Donate</a>
+        </div>
+    </nav>
+   
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', () => {
+            document.getElementById('menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+<header class="relative bg-yellow-100 py-8">
+    <img src="C:\Users\CHANDU KADIRI\Pictures\How-To-Teach-Your-Preschooler-To-Hold-A-Pencil.jpg.webp" 
+         alt="School Image" 
+         class="absolute inset-0 w-full h-full object-cover opacity-50">
+    <div class="relative z-10 text-center">
+        <h1 class="text-3xl font-bold text-red-800 mt-8 mb-4 font-serif">A Unit Of Jnana Jyothi Rehabilitation Society for Disabled (R)</h1>
+        <p class="text-2xl text-red-800 mb-8 font-sans">SRI SAI VATSALYA SCHOOL FOR SPECIAL CHILDREN (MR)</p>
+        </header>
+        <div class="relative flex justify-center mt-4">
+        <a href="DonationsBruu.html" class="bg-yellow-500 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-yellow-600">
+            Donate Now
+        </a>
+        </div>
+
+
+        <div class="flex flex-col md:flex-row p-6">
+            <div class="md:w-1/2 text-left md:pr-6 mt-8">
+            <h2 class="text-3xl font-bold text-red-800 text-center font-serif">
+                Empowering Students with Intellectual Challenges
+            </h2>
+            <p class="mt-4 text-center text-xl text-lg font-sans">
+                Jnanajyothi is a transformative initiative dedicated to supporting students with intellectual challenges. Our mission is to provide them with a free residential facility, offering specialized educational programs, personalized care plans, and a nurturing environment to foster their overall development.
+            </p>
+            <p class="mt-6 text-center text-xl text-lg font-sans">
+                This newly launched initiative has made a strong start, currently supporting 70 students with comprehensive facilities. From day one, we have been dedicated to ensuring that our students receive the best possible education, resources, and care to help them succeed.
+            </p>
+            <p class="mt-6 text-center text-xl text-lg font-sans">
+                Join us in our mission to make a difference in the lives of these incredible students. Your support and contributions can help us continue to provide the necessary resources and opportunities for their growth and success.
+            </p>
+            </div>
+            <div class="md:w-1/2 flex flex-col space-y-4 mt-4 md:mt-0">
+            <img src="C:\Users\CHANDU KADIRI\Pictures\WhatsApp Image 2025-02-16 at 7.09.38 PM.jpeg" class="w-full h-full object-cover rounded-full">
+            </div>
+        </div>
+        <body class="bg-white text-gray-900">
+
+            <div class="text-center py-10">
+            <h2 class="text-3xl font-bold">
+            Our <span class="text-red-800 font-serif">Programs</span>
+            </h2>
+            </div>
+        
+            <div class="container mx-auto px-4 lg:px-16">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+            <!-- Left Section -->
+            <div class="text-center md:text-left">
+            <h3 class="text-3xl font-bold font-serif">Guided Learning</h3>
+            <p class="mt-2 text-xl text-gray-700 font-sans">
+            Students with intellectual challenges engage in learning activities with the support of dedicated teachers who provide the necessary guidance and encouragement.
+            </p>
+            <div class="mt-4 flex justify-center md:justify-start">
+            <img src="C:\Users\CHANDU KADIRI\Pictures\WhatsApp Image 2025-02-17 at 2.59.13 PM.jpeg" alt="Guided Learning" class="rounded-xl shadow-md w-full max-w-sm">
+            </div>
+            </div>
+        
+            <!-- Right Section -->
+            <div class="text-center md:text-left">
+            <h3 class="text-3xl font-bold font-serif">Play and Exploration</h3>
+            <p class="mt-2 text-xl text-gray-700 font-sans">
+            Our students enjoy playful and exploratory activities with a variety of toys, fostering creativity, imagination, and social interaction.
+            </p>
+            <div class="mt-4 flex justify-center md:justify-start">
+            <img src="C:\Users\CHANDU KADIRI\Pictures\WhatsApp Image 2025-02-17 at 2.59.07 PM.jpeg" alt="Play and Exploration" class="rounded-xl shadow-md w-full max-w-sm">
+            </div>
+            </div>
+
+            <!-- Left Section -->
+            <div class="text-center md:text-left">
+            <h3 class="text-3xl font-bold font-serif">Therapeutic Activities</h3>
+            <p class="mt-2 text-xl text-gray-700 font-sans">
+            We offer a range of therapeutic activities designed to support the physical, emotional, and cognitive development of our students.
+            </p>
+            <div class="mt-4 flex justify-center md:justify-start">
+            <img src="C:\Users\CHANDU KADIRI\Pictures\WhatsApp Image 2025-02-17 at 2.59.19 PM.jpeg" alt="Therapeutic Activities" class="rounded-xl shadow-md w-full max-w-sm">
+            </div>
+            </div>
+
+            <!-- Right Section -->
+            <div class="text-center md:text-left">
+            <h3 class="text-3xl font-bold font-serif">Life Skills Training</h3>
+            <p class="mt-2 text-xl text-gray-700 font-sans">
+            Our life skills training program helps students develop essential skills for daily living, promoting independence and self-confidence.
+            </p>
+            <div class="mt-4 flex justify-center md:justify-start">
+            <img src="C:\Users\CHANDU KADIRI\Pictures\WhatsApp Image 2025-02-16 at 7.05.15 PM.jpeg" alt="Life Skills Training" class="rounded-xl shadow-md w-full max-w-sm">
+            </div>
+            </div>
+
+            <!-- Left Section -->
+
+            <!-- Right Section -->
+            <div class="text-center md:text-left">
+            <h3 class="text-3xl font-bold font-serif">Outdoor Activities</h3>
+            <p class="mt-2 text-xl text-gray-700 font-sans">
+            Our outdoor activities encourage physical fitness and social interaction, providing students with opportunities to explore and enjoy nature.
+            </p>
+            <div class="mt-4 flex justify-center md:justify-start">
+            <img src="C:\Users\CHANDU KADIRI\Pictures\WhatsApp Image 2025-02-17 at 2.59.03 PM (1).jpeg"alt="Outdoor Activities" class="rounded-xl shadow-md w-full max-w-sm">
+            </div>
+            </div>
+            </div>
+            </div>
+    <main id="donations" class="p-4 space-y-6 max-w-4xl mx-auto">
+        <section class="text-center p-6">
+            <h2 class="text-2xl font-semibold">Support Our Cause</h2>
+            <p class="mt-2">Help us provide quality education for special children.</p>
+            <a href="DonationsBruu.html" class="mt-4 inline-block bg-yellow-600 text-white px-6 py-3 rounded-lg shadow-lg">Donate Now</a>
+        </section>
+    </main>
+    <footer class="bg-gray-800 text-white text-center p-6 mt-8">
+        <p>&copy; 2025 Sri Sai Vatsalya School</p>
+        <div class="mt-2 space-x-4">
+            <a href="#" class="hover:underline">Facebook</a>
+            <a href="#" class="hover:underline">Instagram</a>
+            <a href="#" class="hover:underline">Twitter</a>
+        </div>
+        <section id="contact" class="mb-6">
+            <h2 class="text-2xl font-semibold mb-4">Contact Us</h2>
+            <p>Phone: (123) 456-7890</p>
+            <p>Email: info@srisaischool.com</p>
+            <p>Address: 123 School St, City, Country</p>
+        </section>
+    </footer>
+</body>
+</html>
