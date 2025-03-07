@@ -26,26 +26,165 @@
         @media (max-width: 768px) {
             .slideshow { max-height: 500px; }
         }
+
+        /* Gallery Styles */
+        .gallery-container {
+            max-width: 900px;
+            margin: auto;
+            position: relative;
+        }
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .carousel img, .carousel video {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: none;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .carousel img.active, .carousel video.active {
+            display: block;
+        }
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .carousel-buttons button {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: background 0.3s ease;
+        }
+        .carousel-buttons button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Mute/Unmute Button Styling */
+.mute-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.mute-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    background-color: #991b1b; /* Red-800 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 10vh; /* Adjust size */
+    width: auto;
+    border-radius: 50%;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Aligns text to the left */
+    font-size: 19px;
+    font-weight: bold;
+    font-family: serif;
+    text-align: left;
+    gap: 8px; /* Adds spacing between links */
+}
+
+.nav-links a {
+    color: white;
+    margin: 0 8px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #facc15; /* Yellow-400 */
+}
+
+/* Donate Button */
+.donate-button {
+    display: none;
+    background-color: #f59e0b; /* Yellow-500 */
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.donate-button:hover {
+    background-color: #d97706; /* Yellow-600 */
+}
+
+/* Show Donate button on larger screens */
+@media (min-width: 768px) {
+    .donate-button {
+        display: inline-block;
+    }
+}
+
+/* Adjust spacing on smaller screens */
+@media (max-width: 640px) {
+    .nav-links {
+        justify-content: center;
+    }
+
+    .nav-links a {
+        margin: 4px;
+    }
+}
     </style>
 </head>
 <body class="bg-yellow-100 text-white-700">
-    <nav class="flex items-center justify-between p-2 bg-red-800 shadow-lg relative">
-        <div class="flex items-center">
-            <a href="index.html" class="flex-shrink-0">
-                <img src="Images/logo.jpg" alt="School Logo" class="h-20 md:h-24 rounded-full">
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="Images/logo.jpg" alt="School Logo" class="logo-img">
             </a>
         </div>
-        <div class="flex items-center space-x-4">
-            <button id="menu-btn" class="md:hidden text-white text-2xl">☰</button>
-            <div id="menu" class="hidden md:flex space-x-4 text-white">
-                <a href="index.html" class="hover:text-yellow-400">Home</a>
-                <a href="#donations" class="hover:text-yellow-400">Donations</a>
-                <a href="Achievements.html" class="hover:text-yellow-400">Achievements</a>
-                <a href="FacultyInfo.html" class="hover:text-yellow-400">Faculty</a>
-                <a href="about.html" class="hover:text-yellow-400">About</a>
-            </div>
-            <a href="DonationsBruu.html" class="hidden md:inline-block bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600">Donate</a>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="Achievements.html">Achievements</a>
+            <a href="FacultyInfo.html">Faculty</a>
+            <a href="about.html">About</a>
         </div>
+
+        <a href="#donations" class="donate-button">Donate</a>
     </nav>
    
     <script>
@@ -143,7 +282,15 @@
             </div>
 
             <!-- Left Section -->
-
+            <div class="text-center md:text-left">
+                <h3 class="text-3xl font-bold font-serif">Learning Life Necessecities</h3>
+                <p class="mt-2 text-xl text-gray-700 font-sans">
+                Our support and teaching helps students develop the basic life skills, facilitating their self-dependence.
+                </p>
+                <div class="mt-4 flex justify-center md:justify-start">
+                <img src="Images/indexpics6.jpg"alt="Outdoor Activities" class="rounded-xl shadow-md w-full max-w-sm">
+            </div>
+            </div>
             <!-- Right Section -->
             <div class="text-center md:text-left">
             <h3 class="text-3xl font-bold font-serif">Outdoor Activities</h3>
@@ -156,26 +303,181 @@
             </div>
             </div>
             </div>
-    <main id="donations" class="p-4 space-y-6 max-w-4xl mx-auto">
-        <section class="text-center p-6">
-            <h2 class="text-2xl font-semibold">Support Our Cause</h2>
-            <p class="mt-2">Help us provide quality education for special children.</p>
-            <a href="DonationsBruu.html" class="mt-4 inline-block bg-yellow-600 text-white px-6 py-3 rounded-lg shadow-lg">Donate Now</a>
-        </section>
-    </main>
+
+<!-- Gallery Section -->
+<section id="gallery" class="text-center py-10">
+    <h2 class="text-3xl font-bold text-red-800 font-serif">Gallery</h2>
+    <p class="text-lg text-gray-700 font-sans mt-2">A glimpse into the activities at Sri Sai Vatsalya School</p>
+    
+    <div class="gallery-container mt-6">
+        <div class="carousel">
+            <img src="Images/indexpics1.jpg" class="active" alt="Gallery Image 1">
+            <img src="Images/indexpics2.jpg" alt="Gallery Image 2">
+            <img src="Images/indexpics3.jpg" alt="Gallery Image 3">
+            <img src="Images/indexpics4.jpg" alt="Gallery Image 4">
+            <video id="galleryVideo" muted autoplay loop class="hidden">
+                <source src="Images/[AMV] Haikyuu! - Unstoppable.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <button id="muteBtn" class="mute-button hidden">
+                🔇
+            </button>
+            <img src="Images/indexpics5.jpg" alt="Gallery Image 5">
+        </div>
+        
+        <div class="carousel-buttons">
+            <button id="prevBtn"></button>
+            <button id="nextBtn"></button>
+        </div>
+    </div>
+</section>
+
+
+<main id="donations" class="p-4 space-y-6 max-w-4xl mx-auto">
+    <section class="text-center p-6">
+        <h2 class="text-2xl font-semibold">How can you help?</h2>
+        <p class="mt-2">Help us provide quality education, healthcare, and optimal living conditions for special children.</p>
+        
+        <p class="text-xl font-semibold mt-6">Donation Details</p>
+
+        <div class="overflow-x-auto mt-4">
+            <table class="w-full text-left border-collapse">
+                <tbody>
+                    <tr>
+                        <td class="border-b border-gray-400 py-2">Providing food for one child (6 months)</td>
+                        <td class="border-b border-gray-400 py-2 text-right">₹5,000/-</td>
+                    </tr>
+                    <tr>
+                        <td class="border-b border-gray-400 py-2">Providing food for one child (per month)</td>
+                        <td class="border-b border-gray-400 py-2 text-right">₹15,000/-</td>
+                    </tr>
+                    <tr>
+                        <td class="border-b border-gray-400 py-2">Providing education for a child (6 months)</td>
+                        <td class="border-b border-gray-400 py-2 text-right">₹7,500/-</td>
+                    </tr>
+                    <tr>
+                        <td class="border-b border-gray-400 py-2">Providing education for a child (1 year)</td>
+                        <td class="border-b border-gray-400 py-2 text-right">₹14,000/-</td>
+                    </tr>
+                    <tr>
+                        <td class="border-b border-gray-400 py-2">One day meal program</td>
+                        <td class="border-b border-gray-400 py-2 text-right">₹6,000/-</td>
+                    </tr>
+                    <tr>
+                        <td class="border-b border-gray-400 py-2">Computer education</td>
+                        <td class="border-b border-gray-400 py-2 text-right">₹9,000/-</td>
+                    </tr>
+                    <tr>
+                        <td class="border-b border-gray-400 py-2">Medical care (diaper & general medicine) (per month)</td>
+                        <td class="border-b border-gray-400 py-2 text-right">₹10,000/-</td>
+                    </tr>
+                    <tr>
+                        <td class="border-b border-gray-400 py-2">Wheelchair</td>
+                        <td class="border-b border-gray-400 py-2 text-right">₹7,500/-</td>
+                    </tr>
+                    <tr>
+                        <td class="border-b border-gray-400 py-2">Building Construction</td>
+                        <td class="border-b border-gray-400 py-2 text-right">₹50,000/- above</td>
+                    </tr>
+                    <tr>
+                        <td class="border-b border-gray-400 py-2">Gas cylinder purchase (per month 10 cylinders)</td>
+                        <td class="border-b border-gray-400 py-2 text-right">₹6,500/-</td>
+                    </tr>
+                    <tr>
+                        <td class="border-b border-gray-400 py-2">Milk purchasing per month</td>
+                        <td class="border-b border-gray-400 py-2 text-right">₹15,000/-</td>
+                    </tr>
+                    <tr>
+                        <td class="border-b border-gray-400 py-2">Providing milk for one day</td>
+                        <td class="border-b border-gray-400 py-2 text-right">₹500/-</td>
+                    </tr>
+                    <tr>
+                        <td class="border-b border-gray-400 py-2">Providing uniform for 80 children</td>
+                        <td class="border-b border-gray-400 py-2 text-right">₹60,000/-</td>
+                    </tr>
+                    <tr>
+                        <td class="border-b border-gray-400 py-2">Providing uniform for one child</td>
+                        <td class="border-b border-gray-400 py-2 text-right">₹800/-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <a href="DonationsBruu.html" class="mt-6 inline-block bg-yellow-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-yellow-700">Donate Now</a>
+    </section>
+</main>
+
     <footer class="bg-gray-800 text-white text-center p-6 mt-8">
         <p>&copy; 2025 Sri Sai Vatsalya School</p>
         <div class="mt-2 space-x-4">
-            <a href="#" class="hover:underline">Facebook</a>
-            <a href="#" class="hover:underline">Instagram</a>
-            <a href="#" class="hover:underline">Twitter</a>
+            <a href="https://www.facebook.com/profile.php?id=61561661524324" class="hover:underline">Facebook</a>
+            <a href="https://www.instagram.com/sri_sai_vathsalya/" class="hover:underline">Instagram</a>
+            <!-- <a href="#" class="hover:underline">Twitter</a> -->
         </div>
-        <section id="contact" class="mb-6">
+        <section id="contact" class="mt-6">
             <h2 class="text-2xl font-semibold mb-4">Contact Us</h2>
-            <p>Phone: (123) 456-7890</p>
-            <p>Email: info@srisaischool.com</p>
-            <p>Address: 123 School St, City, Country</p>
+            <p>Phone: 9164868704(HM), 9448613652(Founder)</p>
+            <p>Email: jnanajyothias@gmail.com</p>
+            <p>Address: No. 05 Assessment No. 10/1 Dasanapura Hobli, Kadabagere Post, Near Janapriya Township, Magadi Main Road, Bengaluru - 562 130</p>
         </section>
     </footer>
+
+    <script>
+        // Navigation menu toggle
+        document.addEventListener("DOMContentLoaded", function() {
+        const images = document.querySelectorAll(".carousel img, .carousel video");
+        const video = document.getElementById("galleryVideo");
+        const muteBtn = document.getElementById("muteBtn");
+        let currentIndex = 0;
+
+        function showImage(index) {
+            images.forEach((el, i) => {
+                el.classList.remove("active");
+                if (i === index) {
+                    el.classList.add("active");
+                    // If the active item is the video, show mute/unmute button
+                    if (el.tagName === "VIDEO") {
+                        muteBtn.classList.remove("hidden");
+                        el.play();
+                    } else {
+                        muteBtn.classList.add("hidden");
+                    }
+                } else {
+                    // Pause the video when not in view
+                    if (el.tagName === "VIDEO") {
+                        el.pause();
+                    }
+                }
+            });
+        }
+
+        document.getElementById("prevBtn").addEventListener("click", function() {
+            currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+            showImage(currentIndex);
+        });
+
+        document.getElementById("nextBtn").addEventListener("click", function() {
+            currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+            showImage(currentIndex);
+        });
+
+        // Auto-slide every 5 seconds
+        setInterval(() => {
+            currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+            showImage(currentIndex);
+        }, 15000);
+
+        // Mute/Unmute Video
+        muteBtn.addEventListener("click", function() {
+            if (video.muted) {
+                video.muted = false;
+                muteBtn.innerHTML = "🔉"; // Change icon to unmute
+            } else {
+                video.muted = true;
+                muteBtn.innerHTML = "🔇"; // Change icon to mute
+            }
+        });
+    });
+    </script>
 </body>
 </html>

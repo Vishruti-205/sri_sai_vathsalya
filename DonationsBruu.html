@@ -26,24 +26,103 @@
         @media (max-width: 768px) {
             .slideshow { max-height: 500px; }
         }
+
+        .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    background-color: #991b1b; /* Red-800 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 10vh; /* Adjust size */
+    width: auto;
+    border-radius: 50%;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Aligns text to the left */
+    font-size: 19px;
+    font-weight: bold;
+    font-family: serif;
+    text-align: left;
+    gap: 8px; /* Adds spacing between links */
+}
+
+.nav-links a {
+    color: white;
+    margin: 0 8px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #facc15; /* Yellow-400 */
+}
+
+/* Donate Button */
+.donate-button {
+    display: none;
+    background-color: #f59e0b; /* Yellow-500 */
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.donate-button:hover {
+    background-color: #d97706; /* Yellow-600 */
+}
+
+/* Show Donate button on larger screens */
+@media (min-width: 768px) {
+    .donate-button {
+        display: inline-block;
+    }
+}
+
+/* Adjust spacing on smaller screens */
+@media (max-width: 640px) {
+    .nav-links {
+        justify-content: center;
+    }
+
+    .nav-links a {
+        margin: 4px;
+    }
+}
+
     </style>
 </head>
 <body class="bg-yellow-100 text-white-700">
-    <nav class="flex items-center justify-between p-2 bg-red-800 shadow-lg relative">
-        <div class="flex items-center">
-            <a href="index.html" class="flex-shrink-0">
-                <img src="Images/logo.jpg" alt="School Logo" class="h-20 md:h-24 rounded-full">
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="Images/logo.jpg" alt="School Logo" class="logo-img">
             </a>
         </div>
-        <div class="flex items-center space-x-4">
-            <button id="menu-btn" class="md:hidden text-white text-2xl">☰</button>
-            <div id="menu" class="hidden md:flex space-x-4 text-white">
-                <a href="index.html" class="hover:text-yellow-400">Home</a>
-                <a href="Achievements.html" class="hover:text-yellow-400">Achievements</a>
-                <a href="FacultyInfo.html" class="hover:text-yellow-400">Faculty</a>
-                <!-- <a href="#gallery" class="hover:text-yellow-400">Gallery</a> -->
-            </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="Achievements.html">Achievements</a>
+            <a href="FacultyInfo.html">Faculty</a>
+            <a href="about.html">About</a>
         </div>
+
+        <a href="#donations" class="donate-button">Donate</a>
     </nav>
    
     <script>
@@ -58,28 +137,28 @@
             <h2 class="text-2xl font-semibold mb-4 text-yellow-100">Help Empower Specially Abled Children</h2>
             <p class="mb-4 text-white">Your generous contribution can significantly impact their education and overall development. Every donation helps us provide better facilities, resources, and opportunities for these children to thrive.</p>
             <h3 class="text-xl font-semibold mb-2 text-yellow-100">Bank Account Details</h3>
-            <p class="text-white"><strong>Bank Name:</strong> XYZ Bank</p>
-            <p class="text-white"><strong>Account Number:</strong> 1234567890</p>
-            <p class="text-white"><strong>IFSC Code:</strong> XYZB0001234</p>
+            <p class="text-white"><strong>Bank Name:</strong> State Bank of India, Hosakote</p>
+            <p class="text-white"><strong>Account Number:</strong> 64011247871</p>
+            <p class="text-white"><strong>IFSC Code:</strong> SBIN0040033</p>
         </div>
-        <div class="qr-container mt-4 text-center">
+        <!-- <div class="qr-container mt-4 text-center">
             <p>Scan the QR code to donate</p>
             <img src="Images/ruhiUpi.jpg" alt="QR Code for Donation" class="mx-auto">
-        </div>
+        </div> -->
     </div>
 
     <footer class="bg-gray-800 text-white text-center p-6 mt-8">
         <p>&copy; 2025 Sri Sai Vatsalya School</p>
         <div class="mt-2 space-x-4">
-            <a href="#" class="hover:underline">Facebook</a>
-            <a href="#" class="hover:underline">Instagram</a>
-            <a href="#" class="hover:underline">Twitter</a>
+            <a href="https://www.facebook.com/profile.php?id=61561661524324" class="hover:underline">Facebook</a>
+            <a href="https://www.instagram.com/sri_sai_vathsalya/" class="hover:underline">Instagram</a>
+            <!-- <a href="#" class="hover:underline">Twitter</a> -->
         </div>
         <section id="contact" class="mt-6">
             <h2 class="text-2xl font-semibold mb-4">Contact Us</h2>
-            <p>Phone: (123) 456-7890</p>
-            <p>Email: info@srisaischool.com</p>
-            <p>Address: 123 School St, City, Country</p>
+            <p>Phone: 9164868704(HM), 9448613652(Founder)</p>
+            <p>Email: jnanajyothias@gmail.com</p>
+            <p>Address: No. 05 Assessment No. 10/1 Dasanapura Hobli, Kadabagere Post, Near Janapriya Township, Magadi Main Road, Bengaluru - 562 130</p>
         </section>
     </footer>
 
