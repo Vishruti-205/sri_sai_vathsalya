@@ -572,8 +572,8 @@ function fetchChatbotResponse(userMessage) {
     let botMessage = "";
 
     // Rule-based responses -->
-    if (userMessage.toLowerCase().includes("donate")) {
-        botMessage = "You can support us by visiting the Donations page. Click on 'Donate Now' to contribute.";
+    if (userMessage.toLowerCase().includes("why should I donate")) {
+        botMessage = "Your donations help us provide better facilities, education, and care for children with intellectual challenges.";
     } else if (userMessage.toLowerCase().includes("contact")) {
         botMessage = "You can contact us at \nPhone: 9164868704(HM), 9448613652(Founder)\nEmail: jnanajyothias@gmail.com";
     } else if (userMessage.toLowerCase().includes("programs")) {
@@ -608,8 +608,8 @@ function fetchChatbotResponse(userMessage) {
         botMessage = "I can provide information about our school, programs, donations, and more. Feel free to ask!";
     } else if (userMessage.toLowerCase().includes("who are you")) {
         botMessage = "I am the chatbot assistant for Sri Sai Vatsalya School. How can I assist you?";
-    } else if (userMessage.toLowerCase().includes("why should I donate")) {
-        botMessage = "Your donations help us provide better facilities, education, and care for children with intellectual challenges.";
+    } else if (userMessage.toLowerCase().includes("donate")) {
+        botMessage = "You can support us by visiting the Donations page. Click on 'Donate Now' to contribute.";
     } else {
         botMessage = "I'm here to help! Please ask about donations, programs, contact details, volunteering, or other information about our school.";
     }
