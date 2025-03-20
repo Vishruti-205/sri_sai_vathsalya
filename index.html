@@ -167,6 +167,84 @@
         margin: 4px;
     }
 }
+
+/* Chatbot Button */
+#chatbot-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #800000;
+    color: #f7e8b2;
+    border: none;
+    border-radius: 50px;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Chatbot Container */
+#chat-container {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    height: 400px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* Chat Header */
+#chat-header {
+    background: #800000;
+    color: #f7e8b2;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Chat Messages */
+#chat-body {
+    padding: 10px;
+    height: 300px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* User & Bot Messages */
+.message {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 80%;
+}
+
+.user {
+    background: #e0e0e0;
+    align-self: flex-end;
+}
+
+.bot {
+    background: #ffcccb;
+    align-self: flex-start;
+}
+
+/* Input Field */
+#chat-input {
+    width: calc(100% - 20px);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+}
     </style>
     <meta name="description" content="Sri Sai Vatsalya School - Providing quality education and care for special children. Join us in making a difference.">
     <meta name="keywords" content="Sri Sai Vatsalya School, Special Education, Charity, Donations, Inclusive Learning">
@@ -440,6 +518,118 @@
         <a href="DonationsBruu.html" class="mt-6 inline-block bg-yellow-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-yellow-700">Donate Now</a>
     </section>
 </main>
+<!-- // Add chatbot button and container to the DOM -->
+<script>
+document.body.insertAdjacentHTML('beforeend', `
+    <button id="chatbot-btn">💬</button>
+    <div id="chat-container">
+        <div id="chat-header">
+            Chatbot
+            <button id="close-chat" style="float: right; background: none; border: none; color: white; font-size: 16px; cursor: pointer;">✖</button>
+        </div>
+        <div id="chat-body"></div>
+        <input id="chat-input" type="text" placeholder="Type your message here...">
+    </div>
+`);
+document.addEventListener("DOMContentLoaded", () => {
+    // Selecting chatbot elements
+const chatbotBtn = document.getElementById("chatbot-btn");
+const chatContainer = document.getElementById("chat-container");
+const chatBody = document.getElementById("chat-body");
+const chatInput = document.getElementById("chat-input");
+
+ // Toggle chatbot visibility -->
+chatbotBtn.addEventListener("click", () => {
+    chatContainer.style.display = chatContainer.style.display === "block" ? "none" : "block";
+});
+
+document.getElementById("close-chat").addEventListener("click", () => {
+    chatContainer.style.display = "none";
+});
+
+ // Function to send messages -->
+function sendMessage() {
+    let userMessage = chatInput.value.trim();
+    if (userMessage === "") return;
+
+   // Display user message -->
+    let userMsgDiv = document.createElement("div");
+    userMsgDiv.className = "message user";
+    userMsgDiv.textContent = userMessage;
+    chatBody.appendChild(userMsgDiv);
+
+    chatInput.value = "";
+    chatBody.scrollTop = chatBody.scrollHeight;
+
+   // Fetch bot response based on rules -->
+    fetchChatbotResponse(userMessage);
+}
+
+ // Function to fetch chatbot response based on predefined rules -->
+function fetchChatbotResponse(userMessage) {
+    let botMessage = "";
+
+    // Rule-based responses -->
+    if (userMessage.toLowerCase().includes("donate")) {
+        botMessage = "You can support us by visiting the Donations page. Click on 'Donate Now' to contribute.";
+    } else if (userMessage.toLowerCase().includes("contact")) {
+        botMessage = "You can contact us at \nPhone: 9164868704(HM), 9448613652(Founder)\nEmail: jnanajyothias@gmail.com";
+    } else if (userMessage.toLowerCase().includes("programs")) {
+        botMessage = "Our programs include Guided Learning, Play and Exploration, Therapeutic Activities, Life Skills Training, and Outdoor Activities.";
+    } else if (userMessage.toLowerCase().includes("address")) {
+        botMessage = "We are located at \nNo. 05 Assessment No. 10/1 Dasanapura Hobli, Kadabagere Post, Near Janapriya Township, Magadi Main Road, Bengaluru - 562 130.";
+    } else if (userMessage.toLowerCase().includes("language")) {
+        botMessage = "You can change the website language using the dropdown menu at the top of the page.";
+    } else if (userMessage.toLowerCase().includes("volunteer")) {
+        botMessage = "We welcome volunteers! Please contact us at \nPhone: 9164868704(HM), 9448613652(Founder)\nEmail: jnanajyothias@gmail.com";
+    } else if (userMessage.toLowerCase().includes("events")) {
+        botMessage = "We organize various events throughout the year. Stay tuned to our website or social media for updates.";
+    } else if (userMessage.toLowerCase().includes("admission")) {
+        botMessage = "For admission inquiries, please contact us at \nPhone: 9164868704(HM), 9448613652(Founder)\nEmail: jnanajyothias@gmail.com";
+    } else if (userMessage.toLowerCase().includes("support")) {
+        botMessage = "You can support us through donations, volunteering, or spreading awareness about our mission.";
+    } else if (userMessage.toLowerCase().includes("hours")) {
+        botMessage = "Our school operates from 9:00 AM to 4:00 PM, Monday to Friday.";
+    } else if (userMessage.toLowerCase().includes("name")) {
+        botMessage = "We are Sri Sai Vatsalya School for Special Children.";
+    } else if (userMessage.toLowerCase().includes("about us")) {
+        botMessage = "Sri Sai Vatsalya School is dedicated to empowering students with intellectual challenges through specialized education and care.";
+    } else if (userMessage.toLowerCase().includes("faculty")) {
+        botMessage = "Our faculty consists of experienced and compassionate educators dedicated to supporting our students' growth.";
+    } else if (userMessage.toLowerCase().includes("questionnaires")) {
+        botMessage = "We provide questionnaires to assess students' needs and progress. Please contact us for more details.";
+    } else if (userMessage.toLowerCase().includes("hi")) {
+        botMessage = "Hello! How can I assist you today?";
+    } else if (userMessage.toLowerCase().includes("how are you")) {
+        botMessage = "I'm just a chatbot, but I'm here to assist you! How can I help you today?";
+    } else if (userMessage.toLowerCase().includes("what can you do")) {
+        botMessage = "I can provide information about our school, programs, donations, and more. Feel free to ask!";
+    } else if (userMessage.toLowerCase().includes("who are you")) {
+        botMessage = "I am the chatbot assistant for Sri Sai Vatsalya School. How can I assist you?";
+    } else if (userMessage.toLowerCase().includes("why should I donate")) {
+        botMessage = "Your donations help us provide better facilities, education, and care for children with intellectual challenges.";
+    } else {
+        botMessage = "I'm here to help! Please ask about donations, programs, contact details, volunteering, or other information about our school.";
+    }
+
+    // Display bot response -->
+    let botMsgDiv = document.createElement("div");
+    botMsgDiv.className = "message bot";
+    botMsgDiv.textContent = botMessage;
+    chatBody.appendChild(botMsgDiv);
+
+    chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+// Send message when Enter key is pressed
+chatInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+        sendMessage();
+    }
+
+});
+});
+</script>
 
     <footer class="bg-gray-800 text-white text-center p-6 mt-8">
         <p>&copy; 2025 Sri Sai Vatsalya School</p>
